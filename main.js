@@ -159,7 +159,7 @@ const ballMat = new THREE.MeshStandardMaterial({
     metalness: 0.1
 });
 const ballMesh = new THREE.Mesh(ballGeo, ballMat);
-ballMesh.position.set(0, ballRadius, 6.5);
+ballMesh.position.set(0, ballRadius, 9.5);
 ballMesh.castShadow = true;
 scene.add(ballMesh);
 const ballBody = new CANNON.Body({
