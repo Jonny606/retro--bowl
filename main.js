@@ -467,7 +467,7 @@ function endRound(result) {
 function resetRound() {
     ballBody.velocity.set(0, 0, 0);
     ballBody.angularVelocity.set(0, 0, 0);
-    ballBody.position.set(0, ballRadius, 9.5.);
+    ballBody.position.set(0, ballRadius, 9.5);
     ballMesh.position.copy(ballBody.position);
     lastBallPosition.copy(ballBody.position);
     
