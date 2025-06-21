@@ -293,9 +293,9 @@ function onMouseDown(event) {
             powerMeterContainer.style.display = 'block';
             shotPower = 0;
             powerInterval = setInterval(() => {
-                shotPower = Math.min(100, shotPower + 2);
-                powerMeterBar.style.width = `${shotPower}%`;
-            }, 20);
+    shotPower = Math.min(100, shotPower + 1); // <--- now charges slower
+    powerMeterBar.style.width = `${shotPower}%`;
+}, 20);
              messageDisplay.textContent = 'Release to Shoot!';
         }
     }
@@ -311,7 +311,7 @@ function onMouseUp(event) {
     const shootDirection = new THREE.Vector3().subVectors(shootTarget, ballMesh.position).normalize();
     
     // Scale power: shotPower (0-100) -> impulse strength (e.g., 20-55)
-    const impulseStrength = 20 + (shotPower / 100) * 35;
+    const impulseStrength = 10 + (shotPower / 100) * 40; // <--- lower min, higher max
     const finalImpulse = shootDirection.multiplyScalar(impulseStrength * playerData.upgrades.power);
 
     ballBody.applyImpulse(new CANNON.Vec3(finalImpulse.x, finalImpulse.y, finalImpulse.z), ballBody.position);
