@@ -69,7 +69,7 @@ function playSound(name) {
 // --- Scene Setup ---
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 1.5, 12);
+camera.position.set(0, 1.5, 9);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x87CEEB);
@@ -159,7 +159,7 @@ const ballMat = new THREE.MeshStandardMaterial({
     metalness: 0.1
 });
 const ballMesh = new THREE.Mesh(ballGeo, ballMat);
-ballMesh.position.set(0, ballRadius, 9.5);
+ballMesh.position.set(0, ballRadius, 8);
 ballMesh.castShadow = true;
 scene.add(ballMesh);
 const ballBody = new CANNON.Body({
